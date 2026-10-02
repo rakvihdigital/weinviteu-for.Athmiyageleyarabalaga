@@ -7,9 +7,11 @@
   canvas#c.walking{ cursor:default; }
   #veil{ position:fixed; inset:0; background:var(--night); transition:opacity 2.4s ease; pointer-events:none; }
   #veil.gone{ opacity:0; }
-  #hint{ position:fixed; left:0; right:0; bottom:calc(30px + env(safe-area-inset-bottom,0px)); text-align:center;
+  #hint{ position:fixed; left:50%; transform:translate(-50%, -50%); top:72%; bottom:auto; text-align:center;
     font:400 12px/1 Cinzel, "Trajan Pro", Georgia, serif; letter-spacing:.38em; color:var(--gold);
-    text-shadow:0 1px 10px rgba(0,0,0,.9); opacity:0; transition:opacity 1.6s ease; pointer-events:none; padding-left:.38em; }
+    background-color:rgba(0, 0, 0, 0.5); backdrop-filter:blur(8px); -webkit-backdrop-filter:blur(8px);
+    border:1px solid rgba(255, 255, 255, 0.1); border-radius:999px; padding:14px 28px; padding-left:calc(28px + .38em); box-shadow:0 4px 12px rgba(0,0,0,0.5);
+    opacity:0; transition:opacity 1.6s ease; pointer-events:none; white-space:nowrap; }
   #hint.on{ opacity:.9; }
   #rsvp{ position:fixed; right:max(3.5vw,20px); top:50%; transform:translateY(-50%); width:clamp(150px,17vw,216px); padding:26px 16px 22px;
     display:flex; flex-direction:column; align-items:center; gap:14px; text-align:center; text-decoration:none; color:var(--gold);
@@ -21,6 +23,8 @@
   #rsvp:hover{ border-color:#f6dd9a; }
   #rsvp:hover .pin{ background:#f6dd9a; }
   #rsvp:focus-visible{ outline:2px solid #f6dd9a; outline-offset:5px; }
+  #rsvp .visit-instruction{ display:block; font-size:9.5px; letter-spacing:.15em; opacity:.9; line-height:1.4; margin-bottom:12px; }
+  #rsvp .pointer::after{ content:"☝️"; }
   #rsvp .pin{ flex:none; width:54px; height:54px; margin-top:14px; border-radius:50%; display:grid; place-items:center; color:#4a0a10;
     background:linear-gradient(#f8dd92,#c8922f); box-shadow:0 0 0 3px #4a0a10, 0 0 0 4px #d09a37, 0 4px 12px rgba(0,0,0,.5); transition:background .3s; }
   #rsvp .pin svg{ width:28px; height:28px; display:block; }
@@ -31,6 +35,8 @@
   @media (max-aspect-ratio:5/4){
     #rsvp{ top:calc(16px + env(safe-area-inset-top,0px)); right:14px; transform:none; width:auto; max-width:calc(100vw - 28px);
       flex-direction:row; gap:12px; padding:10px 18px 10px 10px; text-align:left; border-radius:999px 3px 3px 999px; }
+    #rsvp .visit-instruction{ margin-bottom:6px; font-size:8.5px; }
+    #rsvp .pointer::after{ content:"👈"; }
     #rsvp .pin{ width:44px; height:44px; margin:0; }
     #rsvp .pin svg{ width:23px; height:23px; }
     #rsvp .t{ font-size:11.5px; line-height:1.45; }
@@ -42,14 +48,14 @@
     transition:opacity 2.4s ease; color:#fff3d6; padding:0 20px;
     text-shadow:0 1px 2px #3a1a06, 0 0 14px rgba(58,26,6,.95), 0 0 42px rgba(58,26,6,.8); }
   #welcome.on{ opacity:1; }
-  #welcome .kn{ display:block; font:700 clamp(30px,5.2vw,68px)/1.25 "Noto Serif Kannada", serif; }
+  #welcome .kn{ display:block; font:700 clamp(30px,5.2vw,68px)/1.25 "Noto Serif Kannada", serif; color:var(--gold); }
   #welcome .rule{ display:block; width:min(240px,40vw); height:1px; margin:18px auto 16px; background:linear-gradient(90deg,transparent,#f0cd86,transparent); }
   #welcome .en{ display:block; font:600 clamp(12px,1.5vw,19px)/1.7 Cinzel, "Trajan Pro", Georgia, serif; letter-spacing:.34em; padding-left:.34em; }
   #welcome .kn, #welcome .en{ overflow-wrap:anywhere; }
   @media (max-width:640px){
     #welcome .kn{ font-size:clamp(22px,7vw,30px); }
     #welcome .en{ font-size:11px; letter-spacing:.16em; padding-left:.16em; }
-    #hint{ font-size:11px; letter-spacing:.24em; padding-left:.24em; } }
+    #hint{ font-size:11px; letter-spacing:.24em; padding:12px 24px; padding-left:calc(24px + .24em); } }
   #sound{ position:fixed; left:16px; top:calc(16px + env(safe-area-inset-top,0px)); width:42px; height:42px; padding:0; border-radius:50%;
     display:grid; place-items:center; background:rgba(74,10,16,.82); border:1px solid #d09a37; color:var(--gold); cursor:pointer;
     opacity:0; pointer-events:none; transition:opacity 1.6s ease, border-color .3s; }

@@ -42,7 +42,7 @@ export default function TempleInvitation() {
       </button>
       <a
         id="rsvp"
-        href="https://www.google.com/maps/search/?api=1&query=Yelahanka+New+Town%2C+Bengaluru"
+        href="https://www.google.com/maps/search/?api=1&query=1647%2C+17th+B+Cross+Rd%2C+LIG+3rd+Stage%2C+Chikka+Bommasandra%2C+Yelahanka+New+Town%2C+Bengaluru%2C+Karnataka+560064%2C+India"
         target="_blank"
         rel="noopener"
       >
@@ -52,6 +52,9 @@ export default function TempleInvitation() {
           </svg>
         </span>
         <span className="txt">
+          <span className="visit-instruction">
+            TO VISIT THIS SITE<br />CLICK THIS LOCATION <span className="pointer"></span>
+          </span>
           <span className="t">
             YELAHANKA NEWTOWN,
             <br />
