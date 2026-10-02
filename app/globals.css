@@ -1,0 +1,30 @@
+:root{ --gold:#e6bd6e; --gold-deep:#a8741f; --night:#0e0704; box-sizing:border-box;
+    padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px); }
+  @media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){ --night:#0e0704; } }
+  :root[data-theme="dark"]{ --night:#0e0704; }
+  html,body{ height:100%; margin:0; background:var(--night); overflow:hidden; overscroll-behavior:none; }
+  canvas#c{ position:fixed; inset:0; width:100%; height:100%; display:block; touch-action:none; cursor:pointer; }
+  canvas#c.walking{ cursor:default; }
+  #veil{ position:fixed; inset:0; background:var(--night); transition:opacity 2.4s ease; pointer-events:none; }
+  #veil.gone{ opacity:0; }
+  #hint{ position:fixed; left:0; right:0; bottom:calc(30px + env(safe-area-inset-bottom,0px)); text-align:center;
+    font:400 12px/1 Cinzel, "Trajan Pro", Georgia, serif; letter-spacing:.38em; color:var(--gold);
+    text-shadow:0 1px 10px rgba(0,0,0,.9); opacity:0; transition:opacity 1.6s ease; pointer-events:none; padding-left:.38em; }
+  #hint.on{ opacity:.9; }
+  #rsvp{ position:fixed; left:50%; bottom:calc(34px + env(safe-area-inset-bottom,0px)); transform:translateX(-50%);
+    background:none; border:0; border-top:1px solid var(--gold-deep); border-bottom:1px solid var(--gold-deep);
+    padding:13px 26px 12px calc(26px + .5em); color:var(--gold); font:600 15px/1 Cinzel, "Trajan Pro", Georgia, serif;
+    letter-spacing:.5em; cursor:pointer; opacity:0; pointer-events:none; transition:opacity 1.8s ease, color .3s, border-color .3s;
+    text-shadow:0 1px 10px rgba(0,0,0,.9); }
+  #rsvp.on{ opacity:1; pointer-events:auto; }
+  #rsvp:hover{ color:#fff3d2; border-color:var(--gold); }
+  #rsvp:focus-visible{ outline:1px solid var(--gold); outline-offset:6px; }
+  #fail{ position:fixed; inset:0; display:none; align-items:center; justify-content:center; padding:32px; text-align:center;
+    color:var(--gold); font:400 16px/1.6 Georgia, serif; }
+  #welcome{ position:fixed; left:0; right:0; top:50%; transform:translateY(-50%); text-align:center; pointer-events:none; opacity:0;
+    transition:opacity 2.4s ease; color:#fff3d6; padding:0 20px;
+    text-shadow:0 1px 2px #3a1a06, 0 0 14px rgba(58,26,6,.95), 0 0 42px rgba(58,26,6,.8); }
+  #welcome.on{ opacity:1; }
+  #welcome .kn{ display:block; font:700 clamp(30px,5.2vw,68px)/1.25 "Noto Serif Kannada", serif; }
+  #welcome .rule{ display:block; width:min(240px,40vw); height:1px; margin:18px auto 16px; background:linear-gradient(90deg,transparent,#f0cd86,transparent); }
+  #welcome .en{ display:block; font:600 clamp(12px,1.5vw,19px)/1.7 Cinzel, "Trajan Pro", Georgia, serif; letter-spacing:.34em; padding-left:.34em; }
