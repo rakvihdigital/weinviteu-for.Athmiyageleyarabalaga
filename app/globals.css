@@ -66,3 +66,30 @@
   #sound .slash{ display:none; }
   #sound.muted .slash{ display:block; }
   #sound.muted .wave{ display:none; }
+#credit {
+  position: fixed;
+  bottom: 12px;
+  right: 12px;
+  left: auto;
+  color: #fff;
+  font-family: Cinzel, "Trajan Pro", Georgia, serif;
+  font-size: 12px;
+  text-decoration: none;
+  z-index: 1000;
+  opacity: 0.8;
+  padding: 2px 6px;
+  border-radius: 4px;
+  background: rgba(217,174,90,0.1);
+  transition: background 0.4s ease, opacity 0.3s ease;
+}
+#credit:hover {
+  opacity: 1;
+  background: rgba(217,174,90,0.25);
+}
+.rakvih {
+  color: #d9ae5a;
+}
+.rakvih:hover {
+  text-decoration: underline;
+}
+

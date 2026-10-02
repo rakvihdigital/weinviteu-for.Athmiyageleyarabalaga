@@ -17,7 +17,10 @@ export default function RootLayout({ children }) {
           rel="stylesheet"
         />
       </head>
-      <body>{children}</body>
+            <body>
+        {children}
+        <a href="https://rakvih.in" target="_blank" rel="noopener noreferrer" id="credit">Designed and developed by <span class="rakvih">Rakvih</span></a>
+      </body>
     </html>
   );
 }
