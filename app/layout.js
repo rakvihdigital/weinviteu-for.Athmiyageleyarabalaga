@@ -2,7 +2,7 @@ import "./globals.css";
 
 export const metadata = {
   title: "Athmiya Geleyara Balaga — Ganesha Festival Invitation",
-  description: "Welcome to the Ganesha Festival, 02 – 04 October 2026, Bangalore.",
+  description: "Welcome to the Ganesha Festival, 02 – 04 October 2026, Yelahanka Newtown, Bangalore.",
 };
 export const viewport = { width: "device-width", initialScale: 1, viewportFit: "cover", themeColor: "#0e0704" };
 
